@@ -10,7 +10,9 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
     "typecheck": "tsc",
-    "deploy": "npm run build && wrangler pages deploy ./build/client"
+    "deploy": "npm run build && wrangler pages deploy ./build/client",
+    "db:generate": "node --import tsx/esm --no-warnings ./node_modules/drizzle-kit/bin.cjs generate",
+    "db:push": "dotenv -- node --import tsx/esm --no-warnings ./node_modules/drizzle-kit/bin.cjs push"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.16.8",
@@ -32,6 +34,8 @@
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "autoprefixer": "^10.4.19",
+    "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.31.1",
     "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -41,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
+    "tsx": "^4.20.3",
     "typescript": "^5.1.6",
     "vite": "^6.0.0",
     "vite-tsconfig-paths": "^4.2.1",

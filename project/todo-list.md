@@ -25,7 +25,7 @@
 
 ### 3.1 バックエンド / データベース
 *   **Supabase 連携**
-    *   Supabase プロジェクトのセットアップ（Auth, Postgres, Realtime Storage）: ⬜
+    *   Supabase プロジェクトのセットアップ（Auth, Postgres, Realtime Storage）: ✅
     *   Supabase クライアントの初期化と設定: ✅
     *   Supabase RLS (Row Level Security) の実装: ⬜
     *   リアルタイムチャンネルのサブスクライブとデータ同期: ⬜
