@@ -21,16 +21,32 @@
 *   **開発サーバーの安定稼働**
     *   `npm run dev` で `wrangler pages dev` と `remix vite:dev` が連携して正しく起動しない問題の解決: ✅ (手動での複数コマンド実行により起動可能)
 
-## 3. 今後の主要タスク（指示書に基づく）
+## 3. インフラ & CI/CD (強化)
+*   **Cloudflare Pages + 独自ドメイン & SSL 設定**
+    *   `kenken-mattermost.com` ドメインをCloudflare DNSに追加・管理: ⬜
+    *   Cloudflare Pagesプロジェクトに独自ドメインを割り当て: ⬜
+    *   CloudflareでSSL/TLS（フル/Strict）を有効化: ⬜
+    *   DNSレコード（A/AAAA/CNAME等）の設定: ⬜
+    *   HTTPSリダイレクト・セキュリティヘッダーの確認: ⬜
+*   **CI/CD パイプラインの構築 (GitHub Actions)**
+    *   Lint & Format ジョブの設定: ⬜
+    *   Test ジョブの設定（Vitest, Testing Library, Playwright）: ⬜
+    *   Build & Deploy ジョブの設定（Cloudflare Pages への自動デプロイ）: ⬜
+    *   Security Scan ジョブの設定（NPM Audit, Snyk）: ⬜
+    *   通知機能（Slack/Discord）の検討: ⬜
+*   **DI コンテナの導入検討**
+    *   `tsyringe` または `InversifyJS` の評価と導入: ⬜
 
-### 3.1 バックエンド / データベース
+## 4. 今後の主要タスク（指示書に基づく）
+
+### 4.1 バックエンド / データベース
 *   **Supabase 連携**
     *   Supabase プロジェクトのセットアップ（Auth, Postgres, Realtime Storage）: ✅
     *   Supabase クライアントの初期化と設定: ✅
     *   Supabase RLS (Row Level Security) の実装: ⬜
     *   リアルタイムチャンネルのサブスクライブとデータ同期: ⬜
 
-### 3.2 認証・セキュリティ
+### 4.2 認証・セキュリティ
 *   **Supabase Auth の実装**
     *   メール/パスワード認証フロー（サインアップ、ログイン、パスワードリセット）: ⬜
     *   OAuth (GitHub, Google) 連携: ⬜
@@ -43,7 +59,7 @@
     *   クライアントサイドとサーバーサイドでの厳格な入力値検証: ⬜
     *   依存関係スキャン（`npm audit`, Snyk）の CI/CD への組み込み: ⬜
 
-### 3.3 フロントエンド (UI/UX)
+### 4.3 フロントエンド (UI/UX)
 *   **ページ構成とルーティング (Remix Nested Routes)**
     *   `/` (ランディングページ or ダッシュボード): ⬜
     *   `/dashboard` (プロジェクト一覧、マイタスク一覧): ⬜
@@ -68,13 +84,3 @@
     *   リアルタイム更新の視覚的フィードバック: ⬜
     *   エラーハンドリング（Remix ErrorBoundary）: ⬜
     *   楽観的 UI 更新の検討と実装: ⬜
-
-### 3.4 開発ツールとインフラ
-*   **DI コンテナの導入検討**
-    *   `tsyringe` または `InversifyJS` の評価と導入: ⬜
-*   **CI/CD パイプラインの構築 (GitHub Actions)**
-    *   Lint & Format ジョブの設定: ⬜
-    *   Test ジョブの設定（Vitest, Testing Library, Playwright）: ⬜
-    *   Build & Deploy ジョブの設定（Cloudflare Pages への自動デプロイ）: ⬜
-    *   Security Scan ジョブの設定（NPM Audit, Snyk）: ⬜
-    *   通知機能（Slack/Discord）の検討: ⬜
