@@ -12,7 +12,8 @@
     "typecheck": "tsc",
     "deploy": "npm run build && wrangler pages deploy ./build/client",
     "db:generate": "node --import tsx/esm --no-warnings ./node_modules/drizzle-kit/bin.cjs generate",
-    "db:push": "dotenv -- node --import tsx/esm --no-warnings ./node_modules/drizzle-kit/bin.cjs push"
+    "db:push": "dotenv -- node --import tsx/esm --no-warnings ./node_modules/drizzle-kit/bin.cjs push",
+    "deploy:local": "npm run build && npx wrangler pages deploy ./build/client"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.16.8",
